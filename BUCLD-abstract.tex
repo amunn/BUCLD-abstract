@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[sf,small]{titlesec}
+\usepackage{fancyvrb}
+\DefineShortVerb{\|}
+\title{The \texttt{BUCLD-abstract} class}
+\author{Alan Munn}
+\begin{document}
+\maketitle
+\section{Class option}
+\begin{itemize}
+\item |[numeric]| uses numeric style references for saving even more space.
+\end{itemize}
+\section{Commands}
+The class provides no commands per se, but implements run-in sections for saving space, redefines the title, and redefines the bibliography with no paragraph breaks.  Other space saving elements are up to you.
+
+\section{Dependencies}
+\begin{itemize}
+\item This class requires |biblatex| and |biber| for processing the bibliography.
+\end{itemize}
+\section{Word counts}
+To count words in the abstract, I use the |TeXcount| program provided with TeX Live. TeXcount allows you to add comments to your source file to control what gets counted. If you use TeXShop, there is are two TeXcount engines in the Inactive folder which can be used. Just drag them to the Engines folder and restart TeXShop.  If you are using other editors, |arara| can probably do this too.  I use the following comments:
+\begin{Verbatim}
+%TC:macro \cite [1] this allows citations to be counted
+%TC:macro \Cite [1]
+%TC:macro \textcite [1]
+%TC:macro \parencite [1]
+%TC:ignore place this on a separate line before the second page
+%TC:endignore place this before \end{document}
+\end{Verbatim}
+\end{document}
