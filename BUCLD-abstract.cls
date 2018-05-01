@@ -22,7 +22,7 @@
 % Documentation files:
 %   bucld-abstract.tex and bucld-abstract.pdf; 
 
-\ProvidesClass{bucld-abstract}[2018/04/16 Basic class for BUCLD abstract. Requires biblatex + biber]
+\ProvidesClass{BUCLD-abstract}[2018/04/16 Basic class for BUCLD abstract. Requires biblatex + biber]
 \newif\ifBUCLD@numeric\BUCLD@numericfalse
 \newif\ifBUCLD@normalbib\BUCLD@normalbibfalse
 \DeclareOption{numeric}{\BUCLD@numerictrue}
