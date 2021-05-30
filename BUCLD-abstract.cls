@@ -48,7 +48,7 @@
     \fi
     }
 \else
-    \PassOptionsToPackage{style=authoryear-comp,  minnames=1, maxnames=2,uniquename=false,uniquelist=false, firstinits=false, autopunct=true,doi=false, url=false,isbn=false}{biblatex}
+    \PassOptionsToPackage{style=authoryear-comp,  minnames=1, maxnames=2,uniquename=false,uniquelist=false, giveninits=false, autopunct=true,doi=false, url=false,isbn=false}{biblatex}
     \AtBeginDocument{
     \DeclareFieldFormat[article]{pages}{#1}
     \renewbibmacro{in:}{%
