@@ -29,11 +29,10 @@
 \DeclareOption{normalbib}{\BUCLD@normalbibtrue}
 \ProcessOptions
 \ifBUCLD@numeric
-    \PassOptionsToPackage{style=numeric-comp,  minnames=1, maxnames=1, autopunct=true,doi=false, url=false,isbn=false}{biblatex}
+    \PassOptionsToPackage{style=ext-numeric-comp, articlein=false,  minnames=1, maxnames=1, autopunct=true,doi=false, url=false,isbn=false}{biblatex}
     \AtBeginDocument{
     \DeclareFieldFormat[article]{pages}{#1}%
-    \renewbibmacro{in:}{%
-       \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+    \DeclareFieldFormat[article,inproceedings,incollection]{title}{#1}%
     \ifBUCLD@normalbib
     \else
     \defbibenvironment{bibliography}
@@ -48,11 +47,10 @@
     \fi
     }
 \else
-    \PassOptionsToPackage{style=authoryear-comp,  minnames=1, maxnames=2,uniquename=false,uniquelist=false, giveninits=false, autopunct=true,doi=false, url=false,isbn=false}{biblatex}
+    \PassOptionsToPackage{style=ext-authoryear-comp, articlein=false, minnames=1, maxnames=2,uniquename=false,uniquelist=false, giveninits=true, autopunct=true,doi=false, url=false,isbn=false}{biblatex}
     \AtBeginDocument{
-    \DeclareFieldFormat[article]{pages}{#1}
-    \renewbibmacro{in:}{%
-       \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+    \DeclareFieldFormat[article]{pages}{#1}%
+    \DeclareFieldFormat[article,inproceedings,incollection]{title}{#1}%
     \ifBUCLD@normalbib
     \else
        \xpretobibmacro{author}{\mkbibbold\bgroup}{}{}
