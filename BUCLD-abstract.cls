@@ -27,6 +27,12 @@
 \newif\ifBUCLD@normalbib\BUCLD@normalbibfalse
 \DeclareOption{numeric}{\BUCLD@numerictrue}
 \DeclareOption{normalbib}{\BUCLD@normalbibtrue}
+\DeclareOption{12pt}{\def\BUCLD@sizeoption{12pt}} % added v2.9
+\DeclareOption{11pt}{\def\BUCLD@sizeoption{11pt}}
+\DeclareOption{10pt}{\def\BUCLD@sizeoption{10pt}}
+\DeclareOption{letterpaper}{\def\BUCLD@paperoption{letterpaper}}
+\DeclareOption{a4paper}{\def\BUCLD@paperoption{a4paper}}
+\ExecuteOptions{12pt,letterpaper}
 \ProcessOptions
 \ifBUCLD@numeric
     \PassOptionsToPackage{style=ext-numeric-comp, articlein=false,  minnames=1, maxnames=1, autopunct=true,doi=false, url=false,isbn=false}{biblatex}
@@ -62,7 +68,7 @@
     \fi}
     
 \fi
-\LoadClass[12pt,oneside,letterpaper]{article}[2008/05/27]
+\LoadClass[\BUCLD@sizeoption,\BUCLD@paperoption,oneside]{article}[2008/05/27]
 \RequirePackage{titlesec}
 \RequirePackage{xpatch}
 \RequirePackage{biblatex}
@@ -74,7 +80,7 @@
 {\normalfont\bfseries} 
 {}{0pt}{} 
 \titlespacing{\section} 
-{0pt}{1ex plus .1ex minus .2ex}{1em}
+{0pt}{0ex plus .1ex minus .2ex}{1em}
 % titling
 \pretitle{\begin{center}\bfseries}
 \posttitle{\par\end{center}\vskip-\baselineskip}
